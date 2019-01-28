@@ -713,10 +713,11 @@ class Instagram
         }
 
         $cookies = $secure_cookies + $not_secure_cookies;
-        
-        if (isset($cookies['csrftoken'])) {
-            $this->userSession['csrftoken'] = $cookies['csrftoken'];
-        }
+
+// causing error : using $this when not in object context 
+#        if (isset($cookies['csrftoken'])) {
+#            $this->userSession['csrftoken'] = $cookies['csrftoken'];
+#        }
         
         return $cookies;
     }
